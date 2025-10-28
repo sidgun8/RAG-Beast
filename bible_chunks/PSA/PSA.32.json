@@ -1,0 +1,20 @@
+{
+  "id": "PSA.32",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "32",
+  "bookId": "PSA",
+  "reference": "Psalms 32",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 11,
+  "content": "    A Psalm of David, Maschil.\n   [1] Blessed is he whose transgression is forgiven, whose sin is covered.\n   [2] Blessed is the man unto whom the LORD imputeth not iniquity, and in whose spirit there is no guile.\n   [3] When I kept silence, my bones waxed old through my roaring all the day long.\n   [4] For day and night thy hand was heavy upon me: my moisture is turned into the drought of summer. Selah.\n   [5] I acknowledged my sin unto thee, and mine iniquity have I not hid. I said, I will confess my transgressions unto the LORD; and thou forgavest the iniquity of my sin. Selah.\n   [6] For this shall every one that is godly pray unto thee in a time when thou mayest be found: surely in the floods of great waters they shall not come nigh unto him.\n    \n   [7] Thou art my hiding place; thou shalt preserve me from trouble; thou shalt compass me about with songs of deliverance. Selah.\n   [8] I will instruct thee and teach thee in the way which thou shalt go: I will guide thee with mine eye.\n   [9] Be ye not as the horse, or as the mule, which have no understanding: whose mouth must be held in with bit and bridle, lest they come near unto thee.\n   [10] Many sorrows shall be to the wicked: but he that trusteth in the LORD, mercy shall compass him about.\n   [11] Be glad in the LORD, and rejoice, ye righteous: and shout for joy, all ye that are upright in heart.\n",
+  "next": {
+    "id": "PSA.33",
+    "number": "33",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.31",
+    "number": "31",
+    "bookId": "PSA"
+  }
+}

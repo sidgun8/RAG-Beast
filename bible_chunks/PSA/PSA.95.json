@@ -1,0 +1,20 @@
+{
+  "id": "PSA.95",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "95",
+  "bookId": "PSA",
+  "reference": "Psalms 95",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 11,
+  "content": "   [1] O come, let us sing unto the LORD: let us make a joyful noise to the rock of our salvation.\n   [2] Let us come before his presence with thanksgiving, and make a joyful noise unto him with psalms.\n   [3] For the LORD is a great God, and a great King above all gods.\n   [4] In his hand are the deep places of the earth: the strength of the hills is his also.\n   [5] The sea is his, and he made it: and his hands formed the dry land.\n   [6] O come, let us worship and bow down: let us kneel before the LORD our maker.\n    \n   [7] For he is our God; and we are the people of his pasture, and the sheep of his hand. To day if ye will hear his voice,\n   [8] Harden not your heart, as in the provocation, and as in the day of temptation in the wilderness:\n   [9] When your fathers tempted me, proved me, and saw my work.\n   [10] Forty years long was I grieved with this generation, and said, It is a people that do err in their heart, and they have not known my ways:\n   [11] Unto whom I sware in my wrath that they should not enter into my rest.\n",
+  "next": {
+    "id": "PSA.96",
+    "number": "96",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.94",
+    "number": "94",
+    "bookId": "PSA"
+  }
+}

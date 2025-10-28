@@ -1,0 +1,21 @@
+# AWS Bedrock Configuration
+# IMPORTANT: Remove 'MODEL_ID=' from the value - just put the model ID itself
+
+# Your specified model - use ONE of these formats:
+BEDROCK_MODEL_ID=us.meta.llama4-scout-17b-instruct-v1:0
+
+# OR
+MODEL_ID=us.meta.llama4-scout-17b-instruct-v1:0
+
+# AWS Credentials
+AWS_ACCESS_KEY_ID=your_access_key_here
+AWS_SECRET_ACCESS_KEY=your_secret_key_here
+AWS_REGION=us-east-1
+
+# Optional: Alternative regions if your model is available there
+# AWS_REGION=us-west-2
+# AWS_REGION=eu-west-1
+
+# Database Configuration (if needed)
+# DATABASE_URL=postgresql://user:password@localhost:5432/dbname
+

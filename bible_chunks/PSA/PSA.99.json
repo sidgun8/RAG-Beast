@@ -1,0 +1,20 @@
+{
+  "id": "PSA.99",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "99",
+  "bookId": "PSA",
+  "reference": "Psalms 99",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 9,
+  "content": "   [1] The LORD reigneth; let the people tremble: he sitteth between the cherubims; let the earth be moved.\n   [2] The LORD is great in Zion; and he is high above all the people.\n   [3] Let them praise thy great and terrible name; for it is holy.\n   [4] The king\u2019s strength also loveth judgment; thou dost establish equity, thou executest judgment and righteousness in Jacob.\n   [5] Exalt ye the LORD our God, and worship at his footstool; for he is holy.\n    \n   [6] Moses and Aaron among his priests, and Samuel among them that call upon his name; they called upon the LORD, and he answered them.\n   [7] He spake unto them in the cloudy pillar: they kept his testimonies, and the ordinance that he gave them.\n   [8] Thou answeredst them, O LORD our God: thou wast a God that forgavest them, though thou tookest vengeance of their inventions.\n   [9] Exalt the LORD our God, and worship at his holy hill; for the LORD our God is holy.\n",
+  "next": {
+    "id": "PSA.100",
+    "number": "100",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.98",
+    "number": "98",
+    "bookId": "PSA"
+  }
+}

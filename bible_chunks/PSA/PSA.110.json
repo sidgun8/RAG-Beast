@@ -1,0 +1,20 @@
+{
+  "id": "PSA.110",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "110",
+  "bookId": "PSA",
+  "reference": "Psalms 110",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 7,
+  "content": "    A Psalm of David.\n   [1] The LORD said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.\n   [2] The LORD shall send the rod of thy strength out of Zion: rule thou in the midst of thine enemies.\n   [3] Thy people shall be willing in the day of thy power, in the beauties of holiness from the womb of the morning: thou hast the dew of thy youth.\n   [4] The LORD hath sworn, and will not repent, Thou art a priest for ever after the order of Melchizedek.\n    \n   [5] The Lord at thy right hand shall strike through kings in the day of his wrath.\n   [6] He shall judge among the heathen, he shall fill the places with the dead bodies; he shall wound the heads over many countries.\n   [7] He shall drink of the brook in the way: therefore shall he lift up the head.\n",
+  "next": {
+    "id": "PSA.111",
+    "number": "111",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.109",
+    "number": "109",
+    "bookId": "PSA"
+  }
+}

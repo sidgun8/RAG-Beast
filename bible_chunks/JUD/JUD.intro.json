@@ -1,0 +1,20 @@
+{
+  "id": "JUD.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "JUD",
+  "reference": "Jude",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE GENERAL EPISTLE OF JUDE\n",
+  "next": {
+    "id": "JUD.1",
+    "number": "1",
+    "bookId": "JUD"
+  },
+  "previous": {
+    "id": "3JN.1",
+    "number": "1",
+    "bookId": "3JN"
+  }
+}

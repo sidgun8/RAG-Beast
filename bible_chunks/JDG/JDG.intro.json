@@ -1,0 +1,20 @@
+{
+  "id": "JDG.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "JDG",
+  "reference": "Judges",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    The Book of Judges\n",
+  "next": {
+    "id": "JDG.1",
+    "number": "1",
+    "bookId": "JDG"
+  },
+  "previous": {
+    "id": "JOS.24",
+    "number": "24",
+    "bookId": "JOS"
+  }
+}

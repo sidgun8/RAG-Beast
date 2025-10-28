@@ -1,0 +1,20 @@
+{
+  "id": "PSA.11",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "11",
+  "bookId": "PSA",
+  "reference": "Psalms 11",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 7,
+  "content": "    To the chief Musician, A Psalm of David.\n   [1] In the LORD put I my trust: how say ye to my soul, Flee as a bird to your mountain?\n   [2] For, lo, the wicked bend their bow, they make ready their arrow upon the string, that they may privily shoot at the upright in heart.\n   [3] If the foundations be destroyed, what can the righteous do?\n    \n   [4] The LORD is in his holy temple, the LORD\u2019s throne is in heaven: his eyes behold, his eyelids try, the children of men.\n   [5] The LORD trieth the righteous: but the wicked and him that loveth violence his soul hateth.\n   [6] Upon the wicked he shall rain snares, fire and brimstone, and an horrible tempest: this shall be the portion of their cup.\n   [7] For the righteous LORD loveth righteousness; his countenance doth behold the upright.\n",
+  "next": {
+    "id": "PSA.12",
+    "number": "12",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.10",
+    "number": "10",
+    "bookId": "PSA"
+  }
+}

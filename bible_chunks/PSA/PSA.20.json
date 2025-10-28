@@ -1,0 +1,20 @@
+{
+  "id": "PSA.20",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "20",
+  "bookId": "PSA",
+  "reference": "Psalms 20",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 9,
+  "content": "    To the chief Musician, A Psalm of David.\n   [1] The LORD hear thee in the day of trouble; the name of the God of Jacob defend thee;\n   [2] Send thee help from the sanctuary, and strengthen thee out of Zion;\n   [3] Remember all thy offerings, and accept thy burnt sacrifice; Selah.\n   [4] Grant thee according to thine own heart, and fulfil all thy counsel.\n   [5] We will rejoice in thy salvation, and in the name of our God we will set up our banners: the LORD fulfil all thy petitions.\n    \n   [6] Now know I that the LORD saveth his anointed; he will hear him from his holy heaven with the saving strength of his right hand.\n   [7] Some trust in chariots, and some in horses: but we will remember the name of the LORD our God.\n   [8] They are brought down and fallen: but we are risen, and stand upright.\n   [9] Save, LORD: let the king hear us when we call.\n",
+  "next": {
+    "id": "PSA.21",
+    "number": "21",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.19",
+    "number": "19",
+    "bookId": "PSA"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "PSA.122",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "122",
+  "bookId": "PSA",
+  "reference": "Psalms 122",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 9,
+  "content": "    A Song of degrees of David.\n   [1] I was glad when they said unto me, Let us go into the house of the LORD.\n   [2] Our feet shall stand within thy gates, O Jerusalem.\n   [3] Jerusalem is builded as a city that is compact together:\n   [4] Whither the tribes go up, the tribes of the LORD, unto the testimony of Israel, to give thanks unto the name of the LORD.\n   [5] For there are set thrones of judgment, the thrones of the house of David.\n    \n   [6] Pray for the peace of Jerusalem: they shall prosper that love thee.\n   [7] Peace be within thy walls, and prosperity within thy palaces.\n   [8] For my brethren and companions\u2019 sakes, I will now say, Peace be within thee.\n   [9] Because of the house of the LORD our God I will seek thy good.\n",
+  "next": {
+    "id": "PSA.123",
+    "number": "123",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.121",
+    "number": "121",
+    "bookId": "PSA"
+  }
+}

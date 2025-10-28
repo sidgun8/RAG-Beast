@@ -1,0 +1,20 @@
+{
+  "id": "PSA.92",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "92",
+  "bookId": "PSA",
+  "reference": "Psalms 92",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 15,
+  "content": "    A Psalm or Song for the sabbath day.\n   [1] It is a good thing to give thanks unto the LORD, and to sing praises unto thy name, O most High:\n   [2] To shew forth thy lovingkindness in the morning, and thy faithfulness every night,\n   [3] Upon an instrument of ten strings, and upon the psaltery; upon the harp with a solemn sound.\n   [4] For thou, LORD, hast made me glad through thy work: I will triumph in the works of thy hands.\n   [5] O LORD, how great are thy works! and thy thoughts are very deep.\n   [6] A brutish man knoweth not; neither doth a fool understand this.\n    \n   [7] When the wicked spring as the grass, and when all the workers of iniquity do flourish; it is that they shall be destroyed for ever:\n   [8] But thou, LORD, art most high for evermore.\n   [9] For, lo, thine enemies, O LORD, for, lo, thine enemies shall perish; all the workers of iniquity shall be scattered.\n   [10] But my horn shalt thou exalt like the horn of an unicorn: I shall be anointed with fresh oil.\n   [11] Mine eye also shall see my desire on mine enemies, and mine ears shall hear my desire of the wicked that rise up against me.\n   [12] The righteous shall flourish like the palm tree: he shall grow like a cedar in Lebanon.\n   [13] Those that be planted in the house of the LORD shall flourish in the courts of our God.\n   [14] They shall still bring forth fruit in old age; they shall be fat and flourishing;\n   [15] To shew that the LORD is upright: he is my rock, and there is no unrighteousness in him.\n",
+  "next": {
+    "id": "PSA.93",
+    "number": "93",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.91",
+    "number": "91",
+    "bookId": "PSA"
+  }
+}

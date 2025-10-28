@@ -1,0 +1,20 @@
+{
+  "id": "PSA.61",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "61",
+  "bookId": "PSA",
+  "reference": "Psalms 61",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 8,
+  "content": "    To the chief Musician upon Neginah, A Psalm of David.\n   [1] Hear my cry, O God; attend unto my prayer.\n   [2] From the end of the earth will I cry unto thee, when my heart is overwhelmed: lead me to the rock that is higher than I.\n   [3] For thou hast been a shelter for me, and a strong tower from the enemy.\n   [4] I will abide in thy tabernacle for ever: I will trust in the covert of thy wings. Selah.\n    \n   [5] For thou, O God, hast heard my vows: thou hast given me the heritage of those that fear thy name.\n   [6] Thou wilt prolong the king\u2019s life: and his years as many generations.\n   [7] He shall abide before God for ever: O prepare mercy and truth, which may preserve him.\n   [8] So will I sing praise unto thy name for ever, that I may daily perform my vows.\n",
+  "next": {
+    "id": "PSA.62",
+    "number": "62",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.60",
+    "number": "60",
+    "bookId": "PSA"
+  }
+}

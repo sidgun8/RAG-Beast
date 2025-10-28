@@ -1,0 +1,20 @@
+{
+  "id": "PSA.93",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "93",
+  "bookId": "PSA",
+  "reference": "Psalms 93",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 5,
+  "content": "   [1] The LORD reigneth, he is clothed with majesty; the LORD is clothed with strength, wherewith he hath girded himself: the world also is stablished, that it cannot be moved.\n   [2] Thy throne is established of old: thou art from everlasting.\n   [3] The floods have lifted up, O LORD, the floods have lifted up their voice; the floods lift up their waves.\n   [4] The LORD on high is mightier than the noise of many waters, yea, than the mighty waves of the sea.\n   [5] Thy testimonies are very sure: holiness becometh thine house, O LORD, for ever.\n",
+  "next": {
+    "id": "PSA.94",
+    "number": "94",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.92",
+    "number": "92",
+    "bookId": "PSA"
+  }
+}

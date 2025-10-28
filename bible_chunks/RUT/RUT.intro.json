@@ -1,0 +1,20 @@
+{
+  "id": "RUT.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "RUT",
+  "reference": "Ruth",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    The Book of Ruth\n",
+  "next": {
+    "id": "RUT.1",
+    "number": "1",
+    "bookId": "RUT"
+  },
+  "previous": {
+    "id": "JDG.21",
+    "number": "21",
+    "bookId": "JDG"
+  }
+}

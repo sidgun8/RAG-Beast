@@ -1,0 +1,20 @@
+{
+  "id": "PSA.124",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "124",
+  "bookId": "PSA",
+  "reference": "Psalms 124",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 8,
+  "content": "    A Song of degrees of David.\n   [1] If it had not been the LORD who was on our side, now may Israel say;\n   [2] If it had not been the LORD who was on our side, when men rose up against us:\n   [3] Then they had swallowed us up quick, when their wrath was kindled against us:\n   [4] Then the waters had overwhelmed us, the stream had gone over our soul:\n   [5] Then the proud waters had gone over our soul.\n    \n   [6] Blessed be the LORD, who hath not given us as a prey to their teeth.\n   [7] Our soul is escaped as a bird out of the snare of the fowlers: the snare is broken, and we are escaped.\n   [8] Our help is in the name of the LORD, who made heaven and earth.\n",
+  "next": {
+    "id": "PSA.125",
+    "number": "125",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.123",
+    "number": "123",
+    "bookId": "PSA"
+  }
+}

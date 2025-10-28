@@ -1,0 +1,20 @@
+{
+  "id": "HAB.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "HAB",
+  "reference": "Habakkuk",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    Habakkuk\n",
+  "next": {
+    "id": "HAB.1",
+    "number": "1",
+    "bookId": "HAB"
+  },
+  "previous": {
+    "id": "NAM.3",
+    "number": "3",
+    "bookId": "NAM"
+  }
+}

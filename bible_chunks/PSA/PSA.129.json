@@ -1,0 +1,20 @@
+{
+  "id": "PSA.129",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "129",
+  "bookId": "PSA",
+  "reference": "Psalms 129",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 8,
+  "content": "    A Song of degrees.\n   [1] Many a time have they afflicted me from my youth, may Israel now say:\n   [2] Many a time have they afflicted me from my youth: yet they have not prevailed against me.\n   [3] The plowers plowed upon my back: they made long their furrows.\n   [4] The LORD is righteous: he hath cut asunder the cords of the wicked.\n    \n   [5] Let them all be confounded and turned back that hate Zion.\n   [6] Let them be as the grass upon the housetops, which withereth afore it groweth up:\n   [7] Wherewith the mower filleth not his hand; nor he that bindeth sheaves his bosom.\n   [8] Neither do they which go by say, The blessing of the LORD be upon you: we bless you in the name of the LORD.\n",
+  "next": {
+    "id": "PSA.130",
+    "number": "130",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.128",
+    "number": "128",
+    "bookId": "PSA"
+  }
+}

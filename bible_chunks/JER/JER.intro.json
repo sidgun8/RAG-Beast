@@ -1,0 +1,20 @@
+{
+  "id": "JER.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "JER",
+  "reference": "Jeremiah",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    The Book of the Prophet Jeremiah\n",
+  "next": {
+    "id": "JER.1",
+    "number": "1",
+    "bookId": "JER"
+  },
+  "previous": {
+    "id": "ISA.66",
+    "number": "66",
+    "bookId": "ISA"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "MAT.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "MAT",
+  "reference": "Matthew",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE GOSPEL ACCORDING TO ST. MATTHEW\n",
+  "next": {
+    "id": "MAT.1",
+    "number": "1",
+    "bookId": "MAT"
+  },
+  "previous": {
+    "id": "MAL.4",
+    "number": "4",
+    "bookId": "MAL"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "TIT.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "TIT",
+  "reference": "Titus",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE EPISTLE OF PAUL THE APOSTLE TO TITUS\n",
+  "next": {
+    "id": "TIT.1",
+    "number": "1",
+    "bookId": "TIT"
+  },
+  "previous": {
+    "id": "2TI.4",
+    "number": "4",
+    "bookId": "2TI"
+  }
+}

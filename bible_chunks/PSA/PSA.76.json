@@ -1,0 +1,20 @@
+{
+  "id": "PSA.76",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "76",
+  "bookId": "PSA",
+  "reference": "Psalms 76",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 12,
+  "content": "    To the chief Musician on Neginoth, A Psalm or Song of Asaph.\n   [1] In Judah is God known: his name is great in Israel.\n   [2] In Salem also is his tabernacle, and his dwelling place in Zion.\n   [3] There brake he the arrows of the bow, the shield, and the sword, and the battle. Selah.\n   [4] Thou art more glorious and excellent than the mountains of prey.\n   [5] The stouthearted are spoiled, they have slept their sleep: and none of the men of might have found their hands.\n   [6] At thy rebuke, O God of Jacob, both the chariot and horse are cast into a dead sleep.\n    \n   [7] Thou, even thou, art to be feared: and who may stand in thy sight when once thou art angry?\n   [8] Thou didst cause judgment to be heard from heaven; the earth feared, and was still,\n   [9] When God arose to judgment, to save all the meek of the earth. Selah.\n   [10] Surely the wrath of man shall praise thee: the remainder of wrath shalt thou restrain.\n   [11] Vow, and pay unto the LORD your God: let all that be round about him bring presents unto him that ought to be feared.\n   [12] He shall cut off the spirit of princes: he is terrible to the kings of the earth.\n",
+  "next": {
+    "id": "PSA.77",
+    "number": "77",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.75",
+    "number": "75",
+    "bookId": "PSA"
+  }
+}

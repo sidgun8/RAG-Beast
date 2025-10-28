@@ -1,0 +1,20 @@
+{
+  "id": "PSA.6",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "6",
+  "bookId": "PSA",
+  "reference": "Psalms 6",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 10,
+  "content": "    To the chief Musician on Neginoth upon Sheminith, A Psalm of David.\n   [1] O LORD, rebuke me not in thine anger, neither chasten me in thy hot displeasure.\n   [2] Have mercy upon me, O LORD; for I am weak: O LORD, heal me; for my bones are vexed.\n   [3] My soul is also sore vexed: but thou, O LORD, how long?\n   [4] Return, O LORD, deliver my soul: oh save me for thy mercies\u2019 sake.\n   [5] For in death there is no remembrance of thee: in the grave who shall give thee thanks?\n   [6] I am weary with my groaning; all the night make I my bed to swim; I water my couch with my tears.\n   [7] Mine eye is consumed because of grief; it waxeth old because of all mine enemies.\n    \n   [8] Depart from me, all ye workers of iniquity; for the LORD hath heard the voice of my weeping.\n   [9] The LORD hath heard my supplication; the LORD will receive my prayer.\n   [10] Let all mine enemies be ashamed and sore vexed: let them return and be ashamed suddenly.\n",
+  "next": {
+    "id": "PSA.7",
+    "number": "7",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.5",
+    "number": "5",
+    "bookId": "PSA"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "1JN.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "1JN",
+  "reference": "1 John",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE FIRST EPISTLE GENERAL OF JOHN\n",
+  "next": {
+    "id": "1JN.1",
+    "number": "1",
+    "bookId": "1JN"
+  },
+  "previous": {
+    "id": "2PE.3",
+    "number": "3",
+    "bookId": "2PE"
+  }
+}

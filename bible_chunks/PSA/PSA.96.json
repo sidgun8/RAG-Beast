@@ -1,0 +1,20 @@
+{
+  "id": "PSA.96",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "96",
+  "bookId": "PSA",
+  "reference": "Psalms 96",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 13,
+  "content": "   [1] O sing unto the LORD a new song: sing unto the LORD, all the earth.\n   [2] Sing unto the LORD, bless his name; shew forth his salvation from day to day.\n   [3] Declare his glory among the heathen, his wonders among all people.\n   [4] For the LORD is great, and greatly to be praised: he is to be feared above all gods.\n   [5] For all the gods of the nations are idols: but the LORD made the heavens.\n   [6] Honour and majesty are before him: strength and beauty are in his sanctuary.\n   [7] Give unto the LORD, O ye kindreds of the people, give unto the LORD glory and strength.\n   [8] Give unto the LORD the glory due unto his name: bring an offering, and come into his courts.\n   [9] O worship the LORD in the beauty of holiness: fear before him, all the earth.\n    \n   [10] Say among the heathen that the LORD reigneth: the world also shall be established that it shall not be moved: he shall judge the people righteously.\n   [11] Let the heavens rejoice, and let the earth be glad; let the sea roar, and the fulness thereof.\n   [12] Let the field be joyful, and all that is therein: then shall all the trees of the wood rejoice\n   [13] Before the LORD: for he cometh, for he cometh to judge the earth: he shall judge the world with righteousness, and the people with his truth.\n",
+  "next": {
+    "id": "PSA.97",
+    "number": "97",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.95",
+    "number": "95",
+    "bookId": "PSA"
+  }
+}

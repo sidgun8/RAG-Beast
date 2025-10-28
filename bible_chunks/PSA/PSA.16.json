@@ -1,0 +1,20 @@
+{
+  "id": "PSA.16",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "16",
+  "bookId": "PSA",
+  "reference": "Psalms 16",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 11,
+  "content": "    Michtam of David.\n   [1] Preserve me, O God: for in thee do I put my trust.\n   [2] O my soul, thou hast said unto the LORD, Thou art my Lord: my goodness extendeth not to thee;\n   [3] But to the saints that are in the earth, and to the excellent, in whom is all my delight.\n   [4] Their sorrows shall be multiplied that hasten after another god: their drink offerings of blood will I not offer, nor take up their names into my lips.\n   [5] The LORD is the portion of mine inheritance and of my cup: thou maintainest my lot.\n   [6] The lines are fallen unto me in pleasant places; yea, I have a goodly heritage.\n   [7] I will bless the LORD, who hath given me counsel: my reins also instruct me in the night seasons.\n    \n   [8] I have set the LORD always before me: because he is at my right hand, I shall not be moved.\n   [9] Therefore my heart is glad, and my glory rejoiceth: my flesh also shall rest in hope.\n   [10] For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption.\n   [11] Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore.\n",
+  "next": {
+    "id": "PSA.17",
+    "number": "17",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.15",
+    "number": "15",
+    "bookId": "PSA"
+  }
+}

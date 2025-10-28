@@ -1,0 +1,20 @@
+{
+  "id": "PSA.70",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "70",
+  "bookId": "PSA",
+  "reference": "Psalms 70",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 5,
+  "content": "    To the chief Musician, A Psalm of David, to bring to remembrance.\n   [1] Make haste, O God, to deliver me; make haste to help me, O LORD.\n   [2] Let them be ashamed and confounded that seek after my soul: let them be turned backward, and put to confusion, that desire my hurt.\n   [3] Let them be turned back for a reward of their shame that say, Aha, aha.\n   [4] Let all those that seek thee rejoice and be glad in thee: and let such as love thy salvation say continually, Let God be magnified.\n   [5] But I am poor and needy: make haste unto me, O God: thou art my help and my deliverer; O LORD, make no tarrying.\n",
+  "next": {
+    "id": "PSA.71",
+    "number": "71",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.69",
+    "number": "69",
+    "bookId": "PSA"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ISA.12",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "12",
+  "bookId": "ISA",
+  "reference": "Isaiah 12",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 6,
+  "content": "     [1] And in that day thou shalt say, O LORD, I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me.  [2] Behold, God is my salvation; I will trust, and not be afraid: for the LORD JEHOVAH is my strength and my song; he also is become my salvation.  [3] Therefore with joy shall ye draw water out of the wells of salvation.\n     [4] And in that day shall ye say, Praise the LORD, call upon his name, declare his doings among the people, make mention that his name is exalted.  [5] Sing unto the LORD; for he hath done excellent things: this is known in all the earth.  [6] Cry out and shout, thou inhabitant of Zion: for great is the Holy One of Israel in the midst of thee.\n",
+  "next": {
+    "id": "ISA.13",
+    "number": "13",
+    "bookId": "ISA"
+  },
+  "previous": {
+    "id": "ISA.11",
+    "number": "11",
+    "bookId": "ISA"
+  }
+}

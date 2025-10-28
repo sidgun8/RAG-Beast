@@ -1,0 +1,20 @@
+{
+  "id": "PSA.23",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "23",
+  "bookId": "PSA",
+  "reference": "Psalms 23",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 6,
+  "content": "    A Psalm of David.\n   [1] The LORD is my shepherd; I shall not want.\n   [2] He maketh me to lie down in green pastures: he leadeth me beside the still waters.\n   [3] He restoreth my soul: he leadeth me in the paths of righteousness for his name\u2019s sake.\n   [4] Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.\n   [5] Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over.\n   [6] Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the LORD for ever.\n",
+  "next": {
+    "id": "PSA.24",
+    "number": "24",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.22",
+    "number": "22",
+    "bookId": "PSA"
+  }
+}

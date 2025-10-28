@@ -1,0 +1,20 @@
+{
+  "id": "PSA.126",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "126",
+  "bookId": "PSA",
+  "reference": "Psalms 126",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 6,
+  "content": "    A Song of degrees.\n   [1] When the LORD turned again the captivity of Zion, we were like them that dream.\n   [2] Then was our mouth filled with laughter, and our tongue with singing: then said they among the heathen, The LORD hath done great things for them.\n   [3] The LORD hath done great things for us; whereof we are glad.\n    \n   [4] Turn again our captivity, O LORD, as the streams in the south.\n   [5] They that sow in tears shall reap in joy.\n   [6] He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him.\n",
+  "next": {
+    "id": "PSA.127",
+    "number": "127",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.125",
+    "number": "125",
+    "bookId": "PSA"
+  }
+}

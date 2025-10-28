@@ -1,0 +1,20 @@
+{
+  "id": "PSA.14",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "14",
+  "bookId": "PSA",
+  "reference": "Psalms 14",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 7,
+  "content": "    To the chief Musician, A Psalm of David.\n   [1] The fool hath said in his heart, There is no God. They are corrupt, they have done abominable works, there is none that doeth good.\n   [2] The LORD looked down from heaven upon the children of men, to see if there were any that did understand, and seek God.\n   [3] They are all gone aside, they are all together become filthy: there is none that doeth good, no, not one.\n    \n   [4] Have all the workers of iniquity no knowledge? who eat up my people as they eat bread, and call not upon the LORD.\n   [5] There were they in great fear: for God is in the generation of the righteous.\n   [6] Ye have shamed the counsel of the poor, because the LORD is his refuge.\n   [7] Oh that the salvation of Israel were come out of Zion! when the LORD bringeth back the captivity of his people, Jacob shall rejoice, and Israel shall be glad.\n",
+  "next": {
+    "id": "PSA.15",
+    "number": "15",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.13",
+    "number": "13",
+    "bookId": "PSA"
+  }
+}

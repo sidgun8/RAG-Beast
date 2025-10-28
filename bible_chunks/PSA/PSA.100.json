@@ -1,0 +1,20 @@
+{
+  "id": "PSA.100",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "100",
+  "bookId": "PSA",
+  "reference": "Psalms 100",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 5,
+  "content": "    A Psalm of praise.\n   [1] Make a joyful noise unto the LORD, all ye lands.\n   [2] Serve the LORD with gladness: come before his presence with singing.\n   [3] Know ye that the LORD he is God: it is he that hath made us, and not we ourselves; we are his people, and the sheep of his pasture.\n   [4] Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name.\n   [5] For the LORD is good; his mercy is everlasting; and his truth endureth to all generations.\n",
+  "next": {
+    "id": "PSA.101",
+    "number": "101",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.99",
+    "number": "99",
+    "bookId": "PSA"
+  }
+}

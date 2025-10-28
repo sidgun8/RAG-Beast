@@ -1,0 +1,20 @@
+{
+  "id": "PSA.128",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "128",
+  "bookId": "PSA",
+  "reference": "Psalms 128",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 6,
+  "content": "    A Song of degrees.\n   [1] Blessed is every one that feareth the LORD; that walketh in his ways.\n   [2] For thou shalt eat the labour of thine hands: happy shalt thou be, and it shall be well with thee.\n   [3] Thy wife shall be as a fruitful vine by the sides of thine house: thy children like olive plants round about thy table.\n   [4] Behold, that thus shall the man be blessed that feareth the LORD.\n   [5] The LORD shall bless thee out of Zion: and thou shalt see the good of Jerusalem all the days of thy life.\n   [6] Yea, thou shalt see thy children\u2019s children, and peace upon Israel.\n",
+  "next": {
+    "id": "PSA.129",
+    "number": "129",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.127",
+    "number": "127",
+    "bookId": "PSA"
+  }
+}

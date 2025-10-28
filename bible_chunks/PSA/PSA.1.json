@@ -1,0 +1,20 @@
+{
+  "id": "PSA.1",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "1",
+  "bookId": "PSA",
+  "reference": "Psalms 1",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 6,
+  "content": "   [1] Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.\n   [2] But his delight is in the law of the LORD; and in his law doth he meditate day and night.\n   [3] And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.\n    \n   [4] The ungodly are not so: but are like the chaff which the wind driveth away.\n   [5] Therefore the ungodly shall not stand in the judgment, nor sinners in the congregation of the righteous.\n   [6] For the LORD knoweth the way of the righteous: but the way of the ungodly shall perish.\n",
+  "next": {
+    "id": "PSA.2",
+    "number": "2",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.intro",
+    "number": "intro",
+    "bookId": "PSA"
+  }
+}

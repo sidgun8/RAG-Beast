@@ -1,0 +1,20 @@
+{
+  "id": "HEB.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "HEB",
+  "reference": "Hebrews",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE EPISTLE OF PAUL THE APOSTLE TO THE HEBREWS\n",
+  "next": {
+    "id": "HEB.1",
+    "number": "1",
+    "bookId": "HEB"
+  },
+  "previous": {
+    "id": "PHM.1",
+    "number": "1",
+    "bookId": "PHM"
+  }
+}

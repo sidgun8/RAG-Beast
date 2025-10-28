@@ -1,0 +1,20 @@
+{
+  "id": "REV.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "REV",
+  "reference": "Revelation",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE REVELATION OF ST. JOHN THE DIVINE\n",
+  "next": {
+    "id": "REV.1",
+    "number": "1",
+    "bookId": "REV"
+  },
+  "previous": {
+    "id": "JUD.1",
+    "number": "1",
+    "bookId": "JUD"
+  }
+}

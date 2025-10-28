@@ -1,0 +1,20 @@
+{
+  "id": "PSA.46",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "46",
+  "bookId": "PSA",
+  "reference": "Psalms 46",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 11,
+  "content": "    To the chief Musician for the sons of Korah, A Song upon Alamoth.\n   [1] God is our refuge and strength, a very present help in trouble.\n   [2] Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea;\n   [3] Though the waters thereof roar and be troubled, though the mountains shake with the swelling thereof. Selah.\n   [4] There is a river, the streams whereof shall make glad the city of God, the holy place of the tabernacles of the most High.\n   [5] God is in the midst of her; she shall not be moved: God shall help her, and that right early.\n    \n   [6] The heathen raged, the kingdoms were moved: he uttered his voice, the earth melted.\n   [7] The LORD of hosts is with us; the God of Jacob is our refuge. Selah.\n   [8] Come, behold the works of the LORD, what desolations he hath made in the earth.\n   [9] He maketh wars to cease unto the end of the earth; he breaketh the bow, and cutteth the spear in sunder; he burneth the chariot in the fire.\n   [10] Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth.\n   [11] The LORD of hosts is with us; the God of Jacob is our refuge. Selah.\n",
+  "next": {
+    "id": "PSA.47",
+    "number": "47",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.45",
+    "number": "45",
+    "bookId": "PSA"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "PSA.131",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "131",
+  "bookId": "PSA",
+  "reference": "Psalms 131",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 3,
+  "content": "    A Song of degrees of David.\n   [1] LORD, my heart is not haughty, nor mine eyes lofty: neither do I exercise myself in great matters, or in things too high for me.\n   [2] Surely I have behaved and quieted myself, as a child that is weaned of his mother: my soul is even as a weaned child.\n   [3] Let Israel hope in the LORD from henceforth and for ever.\n",
+  "next": {
+    "id": "PSA.132",
+    "number": "132",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.130",
+    "number": "130",
+    "bookId": "PSA"
+  }
+}

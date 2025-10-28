@@ -1,0 +1,20 @@
+{
+  "id": "PSA.134",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "134",
+  "bookId": "PSA",
+  "reference": "Psalms 134",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 3,
+  "content": "    A Song of degrees.\n   [1] Behold, bless ye the LORD, all ye servants of the LORD, which by night stand in the house of the LORD.\n   [2] Lift up your hands in the sanctuary, and bless the LORD.\n   [3] The LORD that made heaven and earth bless thee out of Zion.\n",
+  "next": {
+    "id": "PSA.135",
+    "number": "135",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.133",
+    "number": "133",
+    "bookId": "PSA"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "NUM.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "NUM",
+  "reference": "Numbers",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    The Fourth Book of Moses, called Numbers\n",
+  "next": {
+    "id": "NUM.1",
+    "number": "1",
+    "bookId": "NUM"
+  },
+  "previous": {
+    "id": "LEV.27",
+    "number": "27",
+    "bookId": "LEV"
+  }
+}

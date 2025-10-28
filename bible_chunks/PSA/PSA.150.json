@@ -1,0 +1,20 @@
+{
+  "id": "PSA.150",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "150",
+  "bookId": "PSA",
+  "reference": "Psalms 150",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 6,
+  "content": "   [1] Praise ye the LORD. Praise God in his sanctuary: praise him in the firmament of his power.\n   [2] Praise him for his mighty acts: praise him according to his excellent greatness.\n   [3] Praise him with the sound of the trumpet: praise him with the psaltery and harp.\n   [4] Praise him with the timbrel and dance: praise him with stringed instruments and organs.\n   [5] Praise him upon the loud cymbals: praise him upon the high sounding cymbals.\n   [6] Let every thing that hath breath praise the LORD. Praise ye the LORD.\n",
+  "next": {
+    "id": "PRO.intro",
+    "number": "intro",
+    "bookId": "PRO"
+  },
+  "previous": {
+    "id": "PSA.149",
+    "number": "149",
+    "bookId": "PSA"
+  }
+}

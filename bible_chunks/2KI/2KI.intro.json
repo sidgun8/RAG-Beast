@@ -1,0 +1,20 @@
+{
+  "id": "2KI.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "2KI",
+  "reference": "2 Kings",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    The Second Book of the Kings\n    Commonly Called the Fourth Book of the Kings\n",
+  "next": {
+    "id": "2KI.1",
+    "number": "1",
+    "bookId": "2KI"
+  },
+  "previous": {
+    "id": "1KI.22",
+    "number": "22",
+    "bookId": "1KI"
+  }
+}

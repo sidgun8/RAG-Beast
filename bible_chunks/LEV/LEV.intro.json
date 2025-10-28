@@ -1,0 +1,20 @@
+{
+  "id": "LEV.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "LEV",
+  "reference": "Leviticus",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    The Third Book of Moses, called Leviticus\n",
+  "next": {
+    "id": "LEV.1",
+    "number": "1",
+    "bookId": "LEV"
+  },
+  "previous": {
+    "id": "EXO.40",
+    "number": "40",
+    "bookId": "EXO"
+  }
+}

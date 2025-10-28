@@ -1,0 +1,20 @@
+{
+  "id": "PSA.120",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "120",
+  "bookId": "PSA",
+  "reference": "Psalms 120",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 7,
+  "content": "    A Song of degrees.\n   [1] In my distress I cried unto the LORD, and he heard me.\n   [2] Deliver my soul, O LORD, from lying lips, and from a deceitful tongue.\n   [3] What shall be given unto thee? or what shall be done unto thee, thou false tongue?\n   [4] Sharp arrows of the mighty, with coals of juniper.\n    \n   [5] Woe is me, that I sojourn in Mesech, that I dwell in the tents of Kedar!\n   [6] My soul hath long dwelt with him that hateth peace.\n   [7] I am for peace: but when I speak, they are for war.\n",
+  "next": {
+    "id": "PSA.121",
+    "number": "121",
+    "bookId": "PSA"
+  },
+  "previous": {
+    "id": "PSA.119",
+    "number": "119",
+    "bookId": "PSA"
+  }
+}

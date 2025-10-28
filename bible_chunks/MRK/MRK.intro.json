@@ -1,0 +1,20 @@
+{
+  "id": "MRK.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "MRK",
+  "reference": "Mark",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE GOSPEL ACCORDING TO ST. MARK\n",
+  "next": {
+    "id": "MRK.1",
+    "number": "1",
+    "bookId": "MRK"
+  },
+  "previous": {
+    "id": "MAT.28",
+    "number": "28",
+    "bookId": "MAT"
+  }
+}

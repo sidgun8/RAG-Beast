@@ -1,0 +1,20 @@
+{
+  "id": "1TH.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "1TH",
+  "reference": "1 Thessalonians",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE FIRST EPISTLE OF PAUL THE APOSTLE TO THE THESSALONIANS\n",
+  "next": {
+    "id": "1TH.1",
+    "number": "1",
+    "bookId": "1TH"
+  },
+  "previous": {
+    "id": "COL.4",
+    "number": "4",
+    "bookId": "COL"
+  }
+}

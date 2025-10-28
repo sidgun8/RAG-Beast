@@ -1,0 +1,20 @@
+{
+  "id": "JAS.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "JAS",
+  "reference": "James",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE GENERAL EPISTLE OF JAMES\n",
+  "next": {
+    "id": "JAS.1",
+    "number": "1",
+    "bookId": "JAS"
+  },
+  "previous": {
+    "id": "HEB.13",
+    "number": "13",
+    "bookId": "HEB"
+  }
+}

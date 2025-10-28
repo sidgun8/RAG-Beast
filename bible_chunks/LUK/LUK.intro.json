@@ -1,0 +1,20 @@
+{
+  "id": "LUK.intro",
+  "bibleId": "de4e12af7f28f599-02",
+  "number": "intro",
+  "bookId": "LUK",
+  "reference": "Luke",
+  "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent",
+  "verseCount": 0,
+  "content": "    THE GOSPEL ACCORDING TO ST. LUKE\n",
+  "next": {
+    "id": "LUK.1",
+    "number": "1",
+    "bookId": "LUK"
+  },
+  "previous": {
+    "id": "MRK.16",
+    "number": "16",
+    "bookId": "MRK"
+  }
+}
