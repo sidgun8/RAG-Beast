@@ -6,8 +6,22 @@ This document explains how to use the RAG search functionality that combines sem
 
 The RAG endpoint (`POST /api/search/rag`) performs the following steps:
 1. **Retrieve**: Use semantic/vector search to find the most relevant document chunks
-2. **Augment**: Pass these chunks as context to an AWS Bedrock LLM
-3. **Generate**: The LLM generates a comprehensive answer based on the retrieved context
+2. **Filter** (optional): Apply metadata filters to narrow results to specific document types
+3. **Augment**: Pass these chunks as context to an AWS Bedrock LLM
+4. **Generate**: The LLM generates a comprehensive answer based on the retrieved context
+
+### ✨ New: Metadata Filtering
+
+RAG searches now support **metadata filtering** to narrow results to specific document categories, books, chapters, or other metadata attributes. See [RAG_METADATA_FILTERING.md](RAG_METADATA_FILTERING.md) for details.
+
+Example:
+```python
+# Search only in 1 Corinthians
+{
+  "query": "What does it say about love?",
+  "metadata_filter": {"bookId": "1CO"}
+}
+```
 
 ## Setup
 

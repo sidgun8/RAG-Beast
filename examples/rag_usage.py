@@ -132,6 +132,76 @@ def test_rag_search():
     else:
         print(f"Error: {response.status_code}")
         print(response.text)
+    
+    # Example 5: RAG with Metadata Filter (Bible-specific)
+    print("\n" + "=" * 80)
+    print("Example 5: RAG with Metadata Filter - Search only in specific book")
+    print("=" * 80)
+    
+    query = "What does it say about love?"
+    
+    response = requests.post(
+        RAG_ENDPOINT,
+        json={
+            "query": query,
+            "limit": 5,
+            "similarity_threshold": 0.5,
+            "metadata_filter": {
+                "bookId": "1CO"  # Search only in 1 Corinthians
+            }
+        }
+    )
+    
+    if response.status_code == 200:
+        result = response.json()
+        print(f"\nQuery: {result['query']}")
+        print(f"\nMetadata Filter: {result.get('metadata_filter', {})}")
+        print(f"\nAnswer:\n{result['answer']}")
+        print(f"\nChunks Used ({result['total_chunks']}):")
+        for i, chunk in enumerate(result['chunks_used'], 1):
+            metadata = chunk.get('metadata', {})
+            print(f"\n{i}. {chunk['title']}")
+            print(f"   Book: {metadata.get('bookId', 'N/A')}")
+            print(f"   Chapter: {metadata.get('chapterNumber', 'N/A')}")
+            print(f"   Reference: {metadata.get('reference', 'N/A')}")
+            print(f"   Score: {chunk.get('similarity_score', 0):.3f}")
+    else:
+        print(f"Error: {response.status_code}")
+        print(response.text)
+    
+    # Example 6: RAG with Multiple Metadata Filters
+    print("\n" + "=" * 80)
+    print("Example 6: RAG with Multiple Metadata Filters")
+    print("=" * 80)
+    
+    query = "Tell me about faith and hope"
+    
+    response = requests.post(
+        RAG_ENDPOINT,
+        json={
+            "query": query,
+            "limit": 5,
+            "similarity_threshold": 0.4,
+            "chunk_type": "hybrid",
+            "semantic_weight": 0.7,
+            "text_weight": 0.3,
+            "metadata_filter": {
+                "source": "Bible KJV",
+                "bookId": "1CO"
+            }
+        }
+    )
+    
+    if response.status_code == 200:
+        result = response.json()
+        print(f"\nQuery: {result['query']}")
+        print(f"\nMetadata Filter: {json.dumps(result.get('metadata_filter', {}), indent=2)}")
+        print(f"\nAnswer:\n{result['answer']}")
+        print(f"\nTotal Chunks: {result['total_chunks']}")
+        print(f"Search Type: {result['chunk_type']}")
+    else:
+        print(f"Error: {response.status_code}")
+        print(response.text)
 
 
 def check_service_status():

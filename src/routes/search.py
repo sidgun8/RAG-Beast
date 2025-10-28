@@ -45,6 +45,7 @@ class RAGSearchRequest(BaseModel):
     semantic_weight: Optional[float] = Field(None, ge=0.0, le=1.0, description="Weight for semantic search (hybrid only)")
     text_weight: Optional[float] = Field(None, ge=0.0, le=1.0, description="Weight for text search (hybrid only)")
     rrf_k: int = Field(60, ge=1, le=1000, description="RRF parameter k for hybrid search")
+    metadata_filter: Optional[Dict[str, Any]] = Field(None, description="Optional metadata filter to narrow search results")
     model_id: Optional[str] = Field(None, description="AWS Bedrock model ID (defaults to configured model)")
     max_tokens: int = Field(1000, ge=100, le=4000, description="Maximum tokens in LLM response")
     temperature: float = Field(0.7, ge=0.0, le=1.0, description="Sampling temperature for LLM")
@@ -194,11 +195,41 @@ async def get_similar_documents(
         raise HTTPException(status_code=500, detail="Internal server error finding similar documents")
 
 
+def _filter_by_metadata(chunks: List[Dict[str, Any]], metadata_filter: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Filter chunks by metadata constraints.
+    Supports nested metadata matching using PostgreSQL @> containment operator logic.
+    """
+    if not metadata_filter:
+        return chunks
+    
+    filtered_chunks = []
+    for chunk in chunks:
+        chunk_metadata = chunk.get('metadata', {})
+        if not chunk_metadata:
+            continue
+        
+        # Check if all filter keys match
+        matches = True
+        for key, value in metadata_filter.items():
+            if key not in chunk_metadata or chunk_metadata[key] != value:
+                matches = False
+                break
+        
+        if matches:
+            filtered_chunks.append(chunk)
+    
+    return filtered_chunks
+
+
 @router.post("/rag")
 async def rag_search(request: RAGSearchRequest):
     """
     RAG (Retrieval-Augmented Generation) search that retrieves relevant chunks 
     and generates an answer using AWS Bedrock LLM
+    
+    Supports optional metadata filtering to narrow results to specific document types,
+    categories, or other metadata attributes.
     """
     try:
         # Step 1: Retrieve relevant chunks using selected search type
@@ -225,30 +256,39 @@ async def rag_search(request: RAGSearchRequest):
                     detail="Both semantic_weight and text_weight must be provided together for hybrid search"
                 )
         
-        # Retrieve chunks based on chunk_type
+        # Retrieve chunks based on chunk_type (get more if filtering by metadata)
+        retrieval_limit = request.limit * 3 if request.metadata_filter else request.limit
+        
         if request.chunk_type == 'semantic':
             chunks = await document_service.search_documents(
                 query=request.query,
                 search_type='semantic',
-                limit=request.limit,
+                limit=retrieval_limit,
                 similarity_threshold=request.similarity_threshold
             )
         elif request.chunk_type == 'text':
             chunks = await document_service.search_documents(
                 query=request.query,
                 search_type='text',
-                limit=request.limit
+                limit=retrieval_limit
             )
         else:  # hybrid
             semantic_weight = request.semantic_weight or 0.7
             text_weight = request.text_weight or 0.3
             chunks = await document_service.hybrid_search(
                 query=request.query,
-                limit=request.limit,
+                limit=retrieval_limit,
                 semantic_weight=semantic_weight,
                 text_weight=text_weight,
                 rrf_k=request.rrf_k
             )
+        
+        # Step 1.5: Apply metadata filtering if provided
+        if request.metadata_filter:
+            logger.info(f"RAG Search: Applying metadata filter: {request.metadata_filter}")
+            chunks = _filter_by_metadata(chunks, request.metadata_filter)
+            # Trim to requested limit after filtering
+            chunks = chunks[:request.limit]
         
         if not chunks:
             return {
@@ -256,7 +296,8 @@ async def rag_search(request: RAGSearchRequest):
                 "answer": "I couldn't find any relevant information to answer your question.",
                 "chunks_used": [],
                 "total_chunks": 0,
-                "search_type": "rag"
+                "search_type": "rag",
+                "metadata_filter": request.metadata_filter
             }
         
         # Step 2: Generate answer using LLM with retrieved chunks
@@ -271,7 +312,8 @@ async def rag_search(request: RAGSearchRequest):
             temperature=request.temperature
         )
         
-        return {
+        # Build response
+        response_data = {
             "query": request.query,
             "answer": answer,
             "chunks_used": [
@@ -279,7 +321,8 @@ async def rag_search(request: RAGSearchRequest):
                     "id": chunk.get("id"),
                     "title": chunk.get("title"),
                     "content_preview": chunk.get("content", "")[:200] + "..." if len(chunk.get("content", "")) > 200 else chunk.get("content", ""),
-                    "similarity_score": chunk.get("similarity_score")
+                    "similarity_score": chunk.get("similarity_score"),
+                    "metadata": chunk.get("metadata", {})
                 }
                 for chunk in chunks
             ],
@@ -294,6 +337,13 @@ async def rag_search(request: RAGSearchRequest):
                 "chunk_type": request.chunk_type
             }
         }
+        
+        # Add metadata filter info if used
+        if request.metadata_filter:
+            response_data["metadata_filter"] = request.metadata_filter
+            response_data["parameters"]["metadata_filter"] = request.metadata_filter
+        
+        return response_data
         
     except ValueError as e:
         logger.error(f"RAG search validation error: {e}")
