@@ -10,6 +10,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+venv/
 
 # Logs
 logs
@@ -122,3 +123,25 @@ uploads/
 # Build outputs
 build/
 dist/
+
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# Python cache and artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VSCode and macOS junk
+.vscode/
+.DS_Store
+
+# Model weights (optional if tracked via LFS)
+*.pth
+*.pt
+*.bin
+*.ckpt
