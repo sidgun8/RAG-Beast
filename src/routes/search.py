@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 import logging
+import json
 
 from ..services.document_service import DocumentService
 from ..services.llm_service import get_llm_service
@@ -206,6 +207,14 @@ def _filter_by_metadata(chunks: List[Dict[str, Any]], metadata_filter: Dict[str,
     filtered_chunks = []
     for chunk in chunks:
         chunk_metadata = chunk.get('metadata', {})
+        
+        # Handle case where metadata is a JSON string
+        if isinstance(chunk_metadata, str):
+            try:
+                chunk_metadata = json.loads(chunk_metadata)
+            except (json.JSONDecodeError, TypeError):
+                continue
+        
         if not chunk_metadata:
             continue
         
@@ -322,7 +331,7 @@ async def rag_search(request: RAGSearchRequest):
                     "title": chunk.get("title"),
                     "content_preview": chunk.get("content", "")[:200] + "..." if len(chunk.get("content", "")) > 200 else chunk.get("content", ""),
                     "similarity_score": chunk.get("similarity_score"),
-                    "metadata": chunk.get("metadata", {})
+                    "metadata": json.loads(chunk.get("metadata", "{}")) if isinstance(chunk.get("metadata"), str) else chunk.get("metadata", {})
                 }
                 for chunk in chunks
             ],

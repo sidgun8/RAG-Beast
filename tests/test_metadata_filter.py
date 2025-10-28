@@ -2,6 +2,7 @@
 Unit tests for metadata filtering in RAG search
 """
 import pytest
+import json
 from src.routes.search import _filter_by_metadata
 
 
@@ -121,6 +122,54 @@ def test_filter_by_metadata_preserves_order():
     assert result[0]["score"] == 0.9
     assert result[1]["score"] == 0.7
     assert result[2]["score"] == 0.6
+
+
+def test_filter_by_metadata_json_string():
+    """Test that metadata as JSON string is properly parsed"""
+    chunks = [
+        {"id": "1", "content": "test", "metadata": '{"bookId": "1CO", "chapterNumber": "13"}'},
+        {"id": "2", "content": "test", "metadata": '{"bookId": "ROM", "chapterNumber": "8"}'},
+        {"id": "3", "content": "test", "metadata": '{"bookId": "1CO", "chapterNumber": "1"}'},
+    ]
+    
+    metadata_filter = {"bookId": "1CO"}
+    result = _filter_by_metadata(chunks, metadata_filter)
+    
+    assert len(result) == 2
+    assert result[0]["id"] == "1"
+    assert result[1]["id"] == "3"
+
+
+def test_filter_by_metadata_json_string_multiple_fields():
+    """Test filtering with JSON string metadata and multiple fields"""
+    chunks = [
+        {"id": "1", "content": "test", "metadata": '{"bookId": "1CO", "chapterNumber": "13"}'},
+        {"id": "2", "content": "test", "metadata": '{"bookId": "1CO", "chapterNumber": "8"}'},
+        {"id": "3", "content": "test", "metadata": '{"bookId": "ROM", "chapterNumber": "13"}'},
+    ]
+    
+    metadata_filter = {"bookId": "1CO", "chapterNumber": "13"}
+    result = _filter_by_metadata(chunks, metadata_filter)
+    
+    assert len(result) == 1
+    assert result[0]["id"] == "1"
+
+
+def test_filter_by_metadata_invalid_json_string():
+    """Test that invalid JSON strings are handled gracefully"""
+    chunks = [
+        {"id": "1", "content": "test", "metadata": '{"bookId": "1CO"}'},
+        {"id": "2", "content": "test", "metadata": 'invalid json{'},
+        {"id": "3", "content": "test", "metadata": '{"bookId": "1CO"}'},
+    ]
+    
+    metadata_filter = {"bookId": "1CO"}
+    result = _filter_by_metadata(chunks, metadata_filter)
+    
+    # Should skip the invalid JSON and return the valid ones
+    assert len(result) == 2
+    assert result[0]["id"] == "1"
+    assert result[1]["id"] == "3"
 
 
 if __name__ == "__main__":
