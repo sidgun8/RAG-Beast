@@ -22,6 +22,11 @@ class TextIngestRequest(BaseModel):
     content: str = Field(..., description="Document content")
     content_type: str = Field("text", description="Content type")
     metadata: Dict[str, Any] = Field(default_factory=dict, description="Document metadata")
+    tenant_id: str = Field("default", description="Tenant identifier")
+    # Optional chunking overrides
+    chunking_strategy: Optional[str] = Field(None, description="Chunking strategy (semantic, sliding_window, recursive)")
+    chunk_size: Optional[int] = Field(None, ge=100, le=5000, description="Override chunk size")
+    chunk_overlap: Optional[int] = Field(None, ge=0, le=500, description="Override chunk overlap")
 
 
 class BulkIngestRequest(BaseModel):
@@ -32,9 +37,13 @@ class BulkIngestRequest(BaseModel):
 async def upload_single_file(
     file: UploadFile = File(...),
     title: Optional[str] = Form(None),
-    metadata: Optional[str] = Form("{}")
+    metadata: Optional[str] = Form("{}"),
+    tenant_id: str = Form("default"),
+    chunking_strategy: Optional[str] = Form(None),
+    chunk_size: Optional[int] = Form(None),
+    chunk_overlap: Optional[int] = Form(None)
 ):
-    """Upload and process a single file"""
+    """Upload and process a single file with tenant-aware chunking"""
     try:
         if not file.filename:
             raise HTTPException(status_code=400, detail="No file uploaded")
@@ -60,7 +69,7 @@ async def upload_single_file(
             # Extract text content
             extracted_text = await file_processor.extract_text_from_file(temp_file_path)
             
-            # Process and store document
+            # Process and store document with chunking options
             result = await document_service.add_document(
                 title=title or file.filename,
                 content=extracted_text,
@@ -70,12 +79,17 @@ async def upload_single_file(
                     **metadata_dict,
                     "original_name": file.filename,
                     "file_size": len(content)
-                }
+                },
+                tenant_id=tenant_id,
+                chunking_strategy=chunking_strategy,
+                chunk_size=chunk_size,
+                chunk_overlap=chunk_overlap
             )
             
             return {
                 "message": "File processed and stored successfully",
-                "document": result
+                "document": result,
+                "tenant_id": tenant_id
             }
             
         finally:
@@ -171,19 +185,24 @@ async def upload_multiple_files(files: List[UploadFile] = File(...)):
 
 @router.post("/text")
 async def ingest_text_content(request: TextIngestRequest):
-    """Ingest text content directly"""
+    """Ingest text content directly with tenant-aware chunking"""
     try:
         result = await document_service.add_document(
             title=request.title,
             content=request.content,
             content_type=request.content_type,
             file_path=None,
-            metadata=request.metadata
+            metadata=request.metadata,
+            tenant_id=request.tenant_id,
+            chunking_strategy=request.chunking_strategy,
+            chunk_size=request.chunk_size,
+            chunk_overlap=request.chunk_overlap
         )
         
         return {
             "message": "Text content processed and stored successfully",
-            "document": result
+            "document": result,
+            "tenant_id": request.tenant_id
         }
         
     except Exception as e:

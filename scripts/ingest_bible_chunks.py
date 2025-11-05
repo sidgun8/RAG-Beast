@@ -72,13 +72,20 @@ async def load_bible_chunks(bible_chunks_dir: str) -> List[Dict[str, Any]]:
     return chunks
 
 
-async def ingest_bible_chunks(chunks: List[Dict[str, Any]], doc_service: DocumentService):
-    """Ingest Bible chunks into the database"""
+async def ingest_bible_chunks(chunks: List[Dict[str, Any]], doc_service: DocumentService, tenant_id: str = 'default'):
+    """
+    Ingest Bible chunks into the database for a specific tenant
+    
+    Args:
+        chunks: List of Bible chunk dictionaries
+        doc_service: Document service instance
+        tenant_id: Tenant identifier (default: 'default')
+    """
     total = len(chunks)
     success_count = 0
     error_count = 0
     
-    logger.info(f"Starting ingestion of {total} Bible chunks...")
+    logger.info(f"Starting ingestion of {total} Bible chunks for tenant '{tenant_id}'...")
     
     for idx, chunk in enumerate(chunks, 1):
         try:
@@ -96,13 +103,14 @@ async def ingest_bible_chunks(chunks: List[Dict[str, Any]], doc_service: Documen
                 'reference': chunk['reference']
             }
             
-            # Ingest the document
+            # Ingest the document with tenant_id
             result = await doc_service.add_document(
                 title=title,
                 content=chunk['content'],
                 content_type='bible_chunk',
                 file_path=chunk['file_path'],
-                metadata=metadata
+                metadata=metadata,
+                tenant_id=tenant_id  # Assign to specific tenant
             )
             
             success_count += 1
@@ -115,7 +123,7 @@ async def ingest_bible_chunks(chunks: List[Dict[str, Any]], doc_service: Documen
             logger.error(f"Failed to ingest chunk {idx}: {e}")
             continue
     
-    logger.info(f"\nIngestion complete!")
+    logger.info(f"\nIngestion complete for tenant '{tenant_id}'!")
     logger.info(f"Total chunks: {total}")
     logger.info(f"Successful: {success_count}")
     logger.info(f"Errors: {error_count}")
@@ -144,16 +152,34 @@ async def main():
             logger.warning("No Bible chunks found to ingest")
             return
         
+        # Ask for tenant_id
+        print("\n" + "=" * 60)
+        print("Tenant Selection")
+        print("=" * 60)
+        print("Enter the tenant ID for this ingestion.")
+        print("Available tenants: default, tenant_a, tenant_b, tenant_c")
+        print("Or create a new tenant by entering a new ID.")
+        tenant_id = input("\nTenant ID (press Enter for 'default'): ").strip()
+        
+        # Default to 'default' if empty
+        if not tenant_id:
+            tenant_id = 'default'
+        
+        # Validate tenant_id format
+        if not tenant_id.replace('_', '').replace('-', '').isalnum():
+            logger.error("Invalid tenant ID. Use only alphanumeric characters, hyphens, and underscores.")
+            return
+        
         # Ask for confirmation
-        logger.info(f"\nReady to ingest {len(chunks)} Bible chunks")
+        logger.info(f"\nReady to ingest {len(chunks)} Bible chunks into tenant '{tenant_id}'")
         response = input("Do you want to proceed? (y/n): ")
         
         if response.lower() != 'y':
             logger.info("Ingestion cancelled")
             return
         
-        # Ingest chunks
-        await ingest_bible_chunks(chunks, doc_service)
+        # Ingest chunks with tenant_id
+        await ingest_bible_chunks(chunks, doc_service, tenant_id)
         
     except Exception as e:
         logger.error(f"Error in main: {e}")

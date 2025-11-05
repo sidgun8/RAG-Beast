@@ -1,0 +1,217 @@
+# Multi-Tenant RAG Configuration
+# Each tenant can have isolated settings for embedding models, dimensions, and search preferences
+
+tenants:
+  # Default tenant configuration
+  default:
+    embedding_model: "embeddinggemma"  # Options: embeddinggemma, openai, huggingface
+    embedding_dimensions: 768
+    search_type: "semantic"  # Options: semantic, text, hybrid
+    use_local: true  # Use local embeddings vs API
+    device: "cpu"  # cpu or mps (Apple Silicon)
+    
+    # API Keys (use environment variables for security)
+    openai_api_key: "${OPENAI_API_KEY}"
+    huggingface_api_key: "${HUGGINGFACE_API_KEY}"
+    
+    # Search parameters
+    default_similarity_threshold: 0.5
+    default_limit: 5
+    
+    # LLM configuration for RAG
+    llm_model_id: "us.meta.llama4-scout-17b-instruct-v1:0"  # AWS Bedrock model
+    llm_max_tokens: 1000
+    llm_temperature: 0.7
+    
+    # Chunking strategy configuration
+    chunking_strategy: "sliding_window"  # Options: semantic, sliding_window, recursive
+    chunk_size: 1000
+    chunk_overlap: 100
+    delimiters: ["\n\n", "\n", ".", "?", "!"]  # Priority order for sliding_window
+    semantic_similarity_threshold: 0.7  # For semantic chunking
+    recursive_separators: ["\n\n", "\n", " ", ""]  # For recursive chunking
+  
+  # Example tenant A: Using EmbeddingGemma with reduced dimensions + Claude Opus
+  tenant_a:
+    embedding_model: "embeddinggemma"
+    embedding_dimensions: 256  # Matryoshka representation
+    search_type: "hybrid"
+    use_local: true
+    device: "cpu"
+    
+    # Hybrid search defaults
+    semantic_weight: 0.7
+    text_weight: 0.3
+    rrf_k: 60
+    
+    default_similarity_threshold: 0.4
+    default_limit: 10
+    
+    # LLM: Claude Opus (most capable, higher cost)
+    llm_model_id: "us.anthropic.claude-opus-4-1-20250805-v1:0"
+    llm_max_tokens: 1500
+    llm_temperature: 0.7
+    
+    # Chunking strategy: Semantic chunking for better context
+    chunking_strategy: "semantic"
+    chunk_size: 800
+    chunk_overlap: 50
+    delimiters: ["\n\n", "\n", "."]
+    semantic_similarity_threshold: 0.75
+    recursive_separators: ["\n\n", "\n", " ", ""]
+  
+  # Example tenant B: Using OpenAI embeddings + Llama Scout
+  tenant_b:
+    embedding_model: "openai"
+    embedding_dimensions: 1536
+    search_type: "semantic"
+    use_local: false
+    
+    openai_api_key: "${OPENAI_API_KEY}"
+    
+    default_similarity_threshold: 0.6
+    default_limit: 5
+    
+    # LLM: Llama Scout (fast, cost-effective)
+    llm_model_id: "us.meta.llama4-scout-17b-instruct-v1:0"
+    llm_max_tokens: 1000
+    llm_temperature: 0.7
+    
+    # Chunking strategy: Recursive for structured documents
+    chunking_strategy: "recursive"
+    chunk_size: 1200
+    chunk_overlap: 150
+    delimiters: ["\n\n", "\n", ".", "?", "!"]
+    semantic_similarity_threshold: 0.7
+    recursive_separators: ["\n\n", "\n", ". ", " ", ""]
+  
+  # Example tenant C: Using HuggingFace API + Claude Haiku (balanced)
+  tenant_c:
+    embedding_model: "huggingface"
+    embedding_dimensions: 384
+    search_type: "text"
+    use_local: false
+    
+    huggingface_api_key: "${HUGGINGFACE_API_KEY}"
+    
+    default_similarity_threshold: 0.5
+    default_limit: 8
+    
+    # LLM: Claude Haiku (fast, affordable)
+    llm_model_id: "us.anthropic.claude-3-haiku-20240307-v1:0"
+    llm_max_tokens: 800
+    llm_temperature: 0.5
+    
+    # Chunking strategy: Sliding window for general purpose
+    chunking_strategy: "sliding_window"
+    chunk_size: 500
+    chunk_overlap: 75
+    delimiters: ["\n\n", "\n", ".", "?", "!"]
+    semantic_similarity_threshold: 0.7
+    recursive_separators: ["\n\n", "\n", " ", ""]
+
+  # BibleIQ tenant: Bible-specific layered embeddings
+  BibleIQ:
+    # Layered embedding pipeline overrides simple embedding_model
+    embedding_pipeline:
+      combine: concat        # or weighted_sum
+      normalize: true        # L2 normalize each component before combine
+      components:
+        - type: sentence_transformer
+          name: "odunola/sentence-transformers-bible-reference-final"
+          weight: 1.0
+        - type: embeddinggemma
+          name: "google/embeddinggemma-300m"
+          weight: 0.5
+      projector:
+        type: matryoshka     # or pca, none
+        target_dims: 768
+    embedding_dimensions: 768
+    search_type: "semantic"
+    use_local: true
+    device: "mps"
+    default_similarity_threshold: 0.5
+    default_limit: 10
+    llm_model_id: "us.anthropic.claude-opus-4-1-20250805-v1:0"
+    llm_max_tokens: 1500
+    llm_temperature: 0.6
+    chunking_strategy: "semantic"
+    chunk_size: 800
+    chunk_overlap: 50
+    delimiters: ["\n\n", "\n", ".", "?", "!"]
+    semantic_similarity_threshold: 0.75
+    recursive_separators: ["\n\n", "\n", " ", ""]
+
+  # BibleIQ tenant: layered embeddings using Bible-specific model + EmbeddingGemma
+  BibleIQ:
+    # Layered embedding pipeline overrides simple embedding settings
+    embedding_pipeline:
+      combine: concat        # or weighted_sum
+      normalize: true        # L2 normalize per component before combine
+      components:
+        - type: sentence_transformer
+          name: "odunola/sentence-transformers-bible-reference-final"
+          weight: 1.0
+        - type: embeddinggemma
+          name: "google/embeddinggemma-300m"
+          weight: 0.5
+      projector:
+        type: matryoshka
+        target_dims: 768
+    # Search and other settings
+    embedding_dimensions: 768
+    search_type: "semantic"
+    use_local: true
+    device: "cpu"
+    default_similarity_threshold: 0.5
+    default_limit: 10
+    llm_model_id: "us.anthropic.claude-opus-4-1-20250805-v1:0"
+    llm_max_tokens: 1500
+    llm_temperature: 0.6
+    chunking_strategy: "semantic"
+    chunk_size: 800
+    chunk_overlap: 50
+    delimiters: ["\n\n", "\n", ".", "?", "!"]
+    semantic_similarity_threshold: 0.75
+    recursive_separators: ["\n\n", "\n", " ", ""]
+
+# Configuration Notes:
+# - embedding_model: Which embedding model to use
+#   * embeddinggemma: Google's EmbeddingGemma 300M model
+#   * openai: OpenAI's text-embedding-ada-002
+#   * huggingface: HuggingFace sentence transformers
+#
+# - embedding_dimensions: Vector dimensions (affects storage and performance)
+#   * EmbeddingGemma: 768 (or reduced via Matryoshka: 256, 512)
+#   * OpenAI: 1536
+#   * HuggingFace: 384
+#
+# - search_type: Default search algorithm
+#   * semantic: Vector similarity search
+#   * text: PostgreSQL full-text search
+#   * hybrid: Combined semantic + text with RRF
+#
+# - use_local: Whether to use local models or API
+#   * true: Run models locally (requires model files)
+#   * false: Use API endpoints (requires API keys)
+#
+# - chunking_strategy: How to split documents into chunks
+#   * semantic: Group semantically similar sentences using embeddings
+#   * sliding_window: Fixed-size chunks with overlap and smart delimiters
+#   * recursive: Hierarchical splitting by paragraphs, sentences, words
+#
+# - chunk_size: Target size for each chunk in characters
+# - chunk_overlap: Overlap between chunks (sliding_window only)
+# - delimiters: Priority list of split points (sliding_window)
+# - semantic_similarity_threshold: Min similarity to group sentences (semantic)
+# - recursive_separators: Hierarchical separators to try (recursive)
+#
+# - llm_model_id: AWS Bedrock LLM model for RAG answer generation
+#   * us.anthropic.claude-opus-4-1-20250805-v1:0 - Most capable Claude
+#   * us.meta.llama4-scout-17b-instruct-v1:0 - Fast Llama model
+#   * anthropic.claude-3-haiku-20240307-v1:0 - Fast, affordable Claude
+#   * anthropic.claude-3-sonnet-20240229-v1:0 - Balanced Claude
+#
+# - llm_max_tokens: Maximum tokens in LLM response (100-4000)
+# - llm_temperature: LLM creativity/randomness (0.0=deterministic, 1.0=creative)
+

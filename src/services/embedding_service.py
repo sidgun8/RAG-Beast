@@ -8,6 +8,8 @@ from sentence_transformers import SentenceTransformer
 import requests
 import json
 from functools import lru_cache
+from math import sqrt
+from .tenant_config_service import get_tenant_config_service
 
 
 class EmbeddingService:
@@ -35,8 +37,71 @@ class EmbeddingService:
         self._model = None
         self._tokenizer = None
         self._sentence_transformer = None
+        # Cache for arbitrary SentenceTransformer models loaded by name
+        self._custom_models = {}
         self._model_initialized = False
         self._initialized = True
+
+    # ---------- Utility helpers for layered embeddings ----------
+    def _l2_normalize(self, vec: Union[List[float], np.ndarray]) -> np.ndarray:
+        arr = np.array(vec, dtype=float)
+        norm = np.linalg.norm(arr)
+        if norm == 0.0:
+            return arr
+        return arr / norm
+
+    def _combine_vectors(self, vectors: List[Union[List[float], np.ndarray]],
+                         weights: Optional[List[float]] = None,
+                         method: str = 'concat') -> np.ndarray:
+        if not vectors:
+            return np.array([], dtype=float)
+        if method == 'concat':
+            return np.concatenate([np.array(v, dtype=float) for v in vectors], axis=-1)
+        if method == 'weighted_sum':
+            arrs = [np.array(v, dtype=float) for v in vectors]
+            if weights is None:
+                weights = [1.0] * len(arrs)
+            w = np.array(weights, dtype=float)
+            if len(w) != len(arrs):
+                raise ValueError('weights length must equal number of vectors for weighted_sum')
+            # Ensure all vectors same length
+            dim = len(arrs[0])
+            if any(len(a) != dim for a in arrs):
+                raise ValueError('All vectors must have same dimension for weighted_sum')
+            stacked = np.vstack(arrs)
+            return (w[:, None] * stacked).sum(axis=0)
+        raise ValueError(f"Unknown combine method: {method}")
+
+    def _project_vector(self, vec: Union[List[float], np.ndarray], projector_cfg: Optional[dict]) -> np.ndarray:
+        """Apply optional projection/refinement to a vector.
+        Supports:
+          - type: 'matryoshka' → truncate to target_dims
+          - type: 'pca' → requires sklearn; fit is ephemeral per process (not persisted)
+          - type: 'none' or missing → no-op
+        """
+        if not projector_cfg or not isinstance(projector_cfg, dict):
+            return np.array(vec, dtype=float)
+        ptype = projector_cfg.get('type', 'none')
+        target_dims = projector_cfg.get('target_dims')
+        arr = np.array(vec, dtype=float)
+        if ptype == 'none' or target_dims is None:
+            return arr
+        if ptype == 'matryoshka':
+            return arr[: int(target_dims)]
+        if ptype == 'pca':
+            try:
+                from sklearn.decomposition import PCA  # type: ignore
+                # Fit PCA on the single vector is degenerate; instead, no-op if insufficient dims
+                if arr.ndim == 1:
+                    # Without a dataset, approximate by truncation if needed
+                    return arr[: int(target_dims)]
+                pca = PCA(n_components=int(target_dims))
+                reduced = pca.fit_transform(arr)
+                return reduced
+            except Exception:
+                # Fallback to truncation if sklearn not available or errors
+                return arr[: int(target_dims)]
+        return arr
     
     def _ensure_model_initialized(self):
         """Ensure the model is initialized (lazy loading)"""
@@ -205,6 +270,19 @@ class EmbeddingService:
         except Exception as e:
             print(f"Error getting sentence transformer embedding: {e}")
             raise
+
+    async def _get_custom_sentence_transformer_embedding(self, text: str, model_name: str) -> List[float]:
+        """Get embedding using a custom SentenceTransformer model by name."""
+        try:
+            if model_name not in self._custom_models:
+                print(f"Loading custom SentenceTransformer model: {model_name}...")
+                self._custom_models[model_name] = SentenceTransformer(model_name)
+                print(f"Custom model '{model_name}' loaded")
+            embedding = self._custom_models[model_name].encode(text, convert_to_tensor=False)
+            return embedding.tolist()
+        except Exception as e:
+            print(f"Error getting custom sentence transformer embedding ({model_name}): {e}")
+            raise
     
     async def _get_api_embedding(self, text: str, model: Optional[str] = None) -> List[float]:
         """Get embedding using API services"""
@@ -330,6 +408,20 @@ class EmbeddingService:
                 embedding = await self.get_embedding(text, embedding_model)
                 embeddings.append(embedding)
             return embeddings
+
+    async def _get_custom_batch_embeddings(self, texts: List[str], model_name: str) -> List[List[float]]:
+        """Get batch embeddings using a custom SentenceTransformer model by name."""
+        try:
+            if model_name not in self._custom_models:
+                print(f"Loading custom SentenceTransformer model: {model_name}...")
+                self._custom_models[model_name] = SentenceTransformer(model_name)
+                print(f"Custom model '{model_name}' loaded")
+            embeddings = self._custom_models[model_name].encode(texts, convert_to_tensor=False)
+            # sentence-transformers may return numpy array
+            return [e.tolist() if hasattr(e, 'tolist') else list(e) for e in embeddings]
+        except Exception as e:
+            print(f"Error getting custom batch embeddings ({model_name}): {e}")
+            raise
     
     async def _get_openai_batch_embeddings(self, texts: List[str]) -> List[List[float]]:
         """Get batch embeddings using OpenAI API"""
@@ -401,6 +493,75 @@ class EmbeddingService:
                 "offline": False,
                 "note": "Hugging Face API"
             }
+
+    # ---------- Tenant-aware embedding APIs ----------
+
+    async def get_embedding_for_tenant(self, text: str, tenant_id: str) -> List[float]:
+        """Compute embedding using tenant's configured pipeline or simple model."""
+        tenant_cfg_service = get_tenant_config_service()
+        tenant_cfg = tenant_cfg_service.get_tenant_config(tenant_id)
+
+        # If pipeline defined, compute layered embedding
+        if tenant_cfg.has_pipeline():
+            pipeline = tenant_cfg.get_embedding_pipeline()
+            components = pipeline.get('components', [])
+            combine = pipeline.get('combine', 'concat')
+            normalize_all = pipeline.get('normalize', True)
+            projector = pipeline.get('projector')
+
+            vectors: List[np.ndarray] = []
+            weights: List[float] = []
+            for comp in components:
+                ctype = comp.get('type', 'sentence_transformer')
+                name = comp.get('name')
+                weight = float(comp.get('weight', 1.0))
+                comp_norm = comp.get('normalize')
+                do_norm = normalize_all if comp_norm is None else bool(comp_norm)
+
+                # Produce component embedding
+                if ctype == 'sentence_transformer':
+                    if not name:
+                        raise ValueError('sentence_transformer component requires a name')
+                    vec = await self._get_custom_sentence_transformer_embedding(text, name)
+                elif ctype == 'embeddinggemma':
+                    vec = await self.get_embedding(text, model='embeddinggemma')
+                elif ctype == 'openai':
+                    vec = await self.get_embedding(text, model='openai')
+                elif ctype == 'huggingface':
+                    vec = await self.get_embedding(text, model='huggingface')
+                else:
+                    raise ValueError(f"Unknown component type: {ctype}")
+
+                arr = np.array(vec, dtype=float)
+                if do_norm:
+                    arr = self._l2_normalize(arr)
+                vectors.append(arr)
+                weights.append(weight)
+
+            combined = self._combine_vectors(vectors, weights if combine == 'weighted_sum' else None, combine)
+            projected = self._project_vector(combined, projector)
+            return projected.tolist()
+
+        # Fallback: simple model per existing behavior
+        vec = await self.get_embedding(text, tenant_cfg.embedding_model)
+        return vec
+
+    async def get_batch_embeddings_for_tenant(self, texts: List[str], tenant_id: str) -> List[List[float]]:
+        """Batch variant of tenant-aware embeddings."""
+        tenant_cfg_service = get_tenant_config_service()
+        tenant_cfg = tenant_cfg_service.get_tenant_config(tenant_id)
+
+        if tenant_cfg.has_pipeline():
+            # For simplicity and consistency, compute per text (component-level batch could be optimized later)
+            results: List[List[float]] = []
+            for t in texts:
+                vec = await self.get_embedding_for_tenant(t, tenant_id)
+                results.append(vec)
+            return results
+
+        # Simple fallback
+        embs = await self.get_batch_embeddings(texts, tenant_cfg.embedding_model)
+        return embs
 
 
 # Singleton instance
